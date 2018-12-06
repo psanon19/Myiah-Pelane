@@ -33,7 +33,7 @@ def get_form(request):
     else:
         form = QuestionForm()
 
-    return render(request, 'start_test.html', {'form': form})
+    return render(request, 'testApp/index.html', {'form': form})
 
 
 def createUser(request):

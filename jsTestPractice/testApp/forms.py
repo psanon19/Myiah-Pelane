@@ -1,5 +1,5 @@
 from django import forms
-from .models import TestModel, UserSetup
+from .models import TestModel, UserSetup , VocabularyModel
 from .models import QuestionModel
 
 
@@ -22,4 +22,9 @@ class UserForm(forms.ModelForm):
         widgets = {
             'password': forms.PasswordInput(),
         }
+
+class VocabularyForm(forms.ModelForm):
+    class Meta:
+        model = VocabularyModel
+        fields = ['w1','w2','w3','w4']
 

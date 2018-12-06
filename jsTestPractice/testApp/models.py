@@ -13,7 +13,7 @@ class TestModel(models.Model):
     def __str__(self):
         return self.first_name
 
-
+##model that sets up questions and answers
 class QuestionModel(models.Model):
     level = models.CharField(max_length=100,)
     q1 = models.CharField(max_length=200)
@@ -28,7 +28,7 @@ class QuestionModel(models.Model):
     def __str__(self):
         return self.q1
 
-
+##model for setup
 class UserSetup(models.Model):
     first_name = models.CharField(max_length=50, null=True)
     last_name = models.CharField(max_length=50, null=True)
@@ -38,4 +38,18 @@ class UserSetup(models.Model):
 
     def __str__(self):
         return self.first_name
+
+##model for vocabulary list options
+class VocabularyModel(models.Model):
+    w1 = models.CharField(max_length=100,blank=True)
+    w2 = models.CharField(max_length=100,blank=True)
+    w3 = models.CharField(max_length=100,blank=True)
+    w4 = models.CharField(max_length=100,blank=True)
+
+
+
+    def __str__(self):
+        return self.w1
+
+
 
