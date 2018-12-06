@@ -27,4 +27,15 @@ class QuestionModel(models.Model):
 
     def __str__(self):
         return self.q1
-    
+
+
+class UserSetup(models.Model):
+    first_name = models.CharField(max_length=50, null=True)
+    last_name = models.CharField(max_length=50, null=True)
+    password = models.CharField(max_length=257)
+    email = models.EmailField(max_length=200)
+    nameFK = models.ForeignKey(TestModel, on_delete=models.SET_NULL, null=True, blank=True,)
+
+    def __str__(self):
+        return self.first_name
+

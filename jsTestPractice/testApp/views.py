@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import TestModel, QuestionModel
-from .forms import TestForm, QuestionForm
+from .forms import TestForm, QuestionForm, UserForm
 from datetime import datetime
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -12,11 +12,11 @@ def userindex(request):
     return render(request, 'testApp/index.html', context)
 
 
-
 def questions(request):
     question_list = QuestionModel.objects.all()
     context = {'question_list': question_list,}
     return render(request,'testApp/start_test.html', context)
+
 
 def get_form(request):
     # if this is a POST request we need to process the form data
@@ -33,4 +33,17 @@ def get_form(request):
     else:
         form = QuestionForm()
 
-    return render(request, 'testApp/index.html', {'form': form})
+    return render(request, 'start_test.html', {'form': form})
+
+
+def createUser(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            User.objects.create_user(request.POST.get("first_name"), request.POST.get("email"),
+                                     request.POST.get("password"), )
+            form.save()
+            return redirect('userindex')
+    else:
+        form = UserForm()
+        return render(request, 'testApp/createUser.html', {'form': form})
