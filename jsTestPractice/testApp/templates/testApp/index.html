@@ -1,6 +1,20 @@
 {% extends "testApp/base.html" %}
 {% block content %}
-<h1>test!!!!!</h1>
+<h1>Definition</h1>
+{% if question_list%}
+{% for eachquestion in question_list %}
+<li>{{eachquestion.q1}}</li>
+<li>{{eachquestion.q2}}</li>
+<li>{{eachquestion.q3}}</li>
+<li>{{eachquestion.q4}}</li>
+{% endfor %}
+
+
+{% else %}
+
+<p>Please login to see this page.</p>
+{% endif %}
+
 <form method="post">
     {% csrf_token %}
     <h1>Definitions</h1>
