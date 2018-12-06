@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TestModel
+from .models import TestModel, UserSetup
 from .models import QuestionModel
 # Register your models here.
 
@@ -7,3 +7,5 @@ from .models import QuestionModel
 admin.site.register(TestModel)
 
 admin.site.register(QuestionModel)
+
+admin.site.register(UserSetup)
