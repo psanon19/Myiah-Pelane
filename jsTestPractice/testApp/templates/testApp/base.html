@@ -1,12 +1,21 @@
 {% load static %}
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Java Script Practice Test</title>
+    <link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'testApp/css/testApp.css' %}">
+    <link rel="stylesheet" href="{% static 'testApp/bootstrap/bootstrap.css' %}">
+    <script src="{% static 'testApp/bootstrap/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'testApp/bootstrap/bootstrap.js' %}"></script>
+
 </head>
 <body>
 <h1>Welcome to the JS Cert. Practice Test</h1>
 <div>
     {% block maininfo %}
     {% endblock %}
+
     {% block content %}
     {% endblock %}
 
