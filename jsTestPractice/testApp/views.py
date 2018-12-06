@@ -15,7 +15,7 @@ def userindex(request):
 def questions(request):
     question_list = QuestionModel.objects.all()
     context = {'question_list': question_list,}
-    return render(request,'testApp/start_test.html', context)
+    return render(request,'testApp/index.html', context)
 
 
 def get_form(request):
