@@ -12,3 +12,19 @@ class TestModel(models.Model):
 
     def __str__(self):
         return self.first_name
+
+
+class QuestionModel(models.Model):
+    level = models.CharField(max_length=100,)
+    q1 = models.CharField(max_length=200)
+    a1 = models.CharField(max_length=100, blank=True)
+    q2 = models.CharField(max_length=200)
+    a2 = models.CharField(max_length=100, blank=True)
+    q3 = models.CharField(max_length=200)
+    a3 = models.CharField(max_length=100, blank=True)
+    q4 = models.CharField(max_length=200)
+    a4 = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return self.q1
+    
