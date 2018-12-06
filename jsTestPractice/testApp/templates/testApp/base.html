@@ -34,16 +34,18 @@
 
 <div class="container">
     <div class="jumbotron" align="center">
-        <h1>Welcome to the JS Cert. Practice Test</h1>
+        <h1>Welcome to the Programming Vocabulary Test</h1>
     </div>
 
 
     <div class="mainInfo" style="border: black thin solid" align="center">
         {% block maininfo %}
         {% endblock %}
-
+        {% if user.is_authenticated %}
         {% block content %}
         {% endblock %}
+        {% endif %}
+
     </div>
 
     <div class="footer" style="border: black thin solid">
