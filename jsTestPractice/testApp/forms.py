@@ -12,7 +12,7 @@ class TestForm(forms.ModelForm):
 class QuestionForm(forms.ModelForm):
     class Meta:
         model= QuestionModel
-        fields = ['q1','q2','q3','q4',]
+        fields = ['a1','a2','a3','a4',]
 
 
 class UserForm(forms.ModelForm):

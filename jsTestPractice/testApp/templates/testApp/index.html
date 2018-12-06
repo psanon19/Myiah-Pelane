@@ -1,18 +1,13 @@
 {% extends "testApp/base.html" %}
 {% block content %}
-<h1>Definition</h1>
 {% if question_list%}
 {% for eachquestion in question_list %}
-<ul><li>{{eachquestion.q1}}</li>
-<li>{{eachquestion.q2}}</li>
-<li>{{eachquestion.q3}}</li>
-    <li>{{eachquestion.q4}}</li></ul>
+<H1>{{eachquestion.level}}</H1>
+<li>1){{eachquestion.q1}}</li>
+<li>2){{eachquestion.q2}}</li>
+<li>3){{eachquestion.q3}}</li>
+<li>4){{eachquestion.q4}}</li>
 {% endfor %}
-
-
-{% else %}
-
-<p>Please login to see this page.</p>
 {% endif %}
 
 <form method="post">
@@ -21,8 +16,19 @@
     {{ form.as_p}}
     <input type="submit" value="Submit">
 </form>
+
 <h1>Vocab Bank </h1>
-<ul><li></li></ul>
+{% if vocab_list%}
+{% for eachword in vocab_list %}
+
+<li>{{eachword.w4}}</li>
+<li>{{eachword.w1}}</li>
+<li>{{eachword.w2}}</li>
+<li>{{eachword.w3}}</li>
+{% endfor %}
+{% endif %}
+
+
 {% endblock %}
 
 
@@ -39,7 +45,7 @@
 
 <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("Dec 6, 2018 11:28:00").getTime();
+    var countDownDate = new Date("Dec 6, 2018 11:38:00").getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function() {
