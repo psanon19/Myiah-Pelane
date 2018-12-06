@@ -17,7 +17,7 @@ def questions(request):
     context = {'question_list': question_list,}
     return render(request,'testApp/start_test.html', context)
 
-
+@login_required()
 def get_form(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -33,7 +33,7 @@ def get_form(request):
     else:
         form = QuestionForm()
 
-    return render(request, 'start_test.html', {'form': form})
+    return render(request, 'testApp/start_test.html', {'form': form})
 
 
 def createUser(request):
