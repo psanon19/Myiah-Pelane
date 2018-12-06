@@ -39,8 +39,10 @@
 
 
     <div class="mainInfo" style="border: black thin solid" align="center">
-        {% block maininfo %}
+        {% block clock %}
         {% endblock %}
+
+
         {% if user.is_authenticated %}
         {% block content %}
         {% endblock %}
