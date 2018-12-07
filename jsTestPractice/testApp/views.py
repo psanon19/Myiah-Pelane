@@ -42,6 +42,7 @@ def get_form(request):
     else:
         form = QuestionForm()
 
+
     return render(request, 'testApp/index.html', {'form': form ,'question_list': question_list,'vocab_list': vocab_list })
 
 
