@@ -24,6 +24,7 @@ class QuestionModel(models.Model):
     a3 = models.CharField(max_length=100, blank=True)
     q4 = models.CharField(max_length=200)
     a4 = models.CharField(max_length=100, blank=True)
+    timeSetter = models.IntegerField(default=0,blank=True)
 
     def __str__(self):
         return self.q1
