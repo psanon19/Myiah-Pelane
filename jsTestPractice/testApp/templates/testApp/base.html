@@ -48,8 +48,8 @@
 
         {% block maininfo %}
         {% endblock %}
-
         {% if user.is_authenticated %}
+        <a href="{% url 'theform' %}">Click Here To Start</a>
         {% block content %}
         {% endblock %}
         {% endif %}
